@@ -1,12 +1,22 @@
-import java.util.Date;
+
 
 public class Livro {
     String titulo;
     String autor;
-    Date AnoDePublicacao;
+    int AnoDePublicacao;
     String editora;
     int quantidade;
     int numeroDeEmprestimos;
+
+    public Livro(String titulo, int numeroDeEmprestimos, int quantidade, String editora, int anoDePublicacao, String autor) {
+        this.titulo = titulo;
+        this.numeroDeEmprestimos = numeroDeEmprestimos;
+        this.quantidade = quantidade;
+        this.editora = editora;
+        this.AnoDePublicacao = anoDePublicacao;
+        this.autor = autor;
+    }
+
     public void imprimir(){
         System.out.println("Metatados\nTítulo do Livro: " + titulo);
         System.out.println("Autor: " + autor);

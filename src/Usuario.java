@@ -13,7 +13,7 @@ public abstract class Usuario {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
-        this.id = id++;
+        id = id++;
     }
 
     boolean devolverLivro(Livro livro) {
