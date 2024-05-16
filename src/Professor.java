@@ -7,6 +7,7 @@ public class Professor extends Usuario{
     public Professor(String nome, String cpf, Date dataNascimento, String formacao) {
         super(nome, cpf, dataNascimento);
         this.formacao = formacao;
+        //livrosAlugados = new Livro[10];
     }
 
     boolean pegarLivro(Livro livro){

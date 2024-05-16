@@ -19,8 +19,8 @@ public abstract class Usuario {
     boolean devolverLivro(Livro livro) {
         boolean devolvido = false;
         if(livrosAlugados.contains(livro)) {
+            livro.setQuantidade(1);
             livrosAlugados.remove(livro);
-            livro.numeroDeEmprestimos --;
             devolvido = true;
         }
         return devolvido;
@@ -28,21 +28,36 @@ public abstract class Usuario {
 
     boolean pegarLivro(Livro livro) {
         boolean pego = false;
-        if(livro.quantidade - livro.numeroDeEmprestimos > 0) {
+        if(livro.quantidade > 0) {
+            livro.setQuantidade(-1);
             livrosAlugados.add(livro);
-            livro.numeroDeEmprestimos ++;
             pego = true;
         }
-        else
-            System.out.println("Livro indisponível");
+        else if(livro.quantidade == 0) {
+            System.out.println("Todas as copias ja foram alugadas...");
+        } else
+            System.out.println("Não temos esse livro ou não existe...");
         return pego;
     }
 
-    void imprimirLivros(){
-        System.out.println("Livros Alugados:\n");
+    void imprimirLivros(boolean amount){
+        System.out.println("-------Livros Alugados-------");
         for(Livro livro : livrosAlugados){
-            livro.imprimir();
+            livro.imprimir(amount);
         }
+        System.out.println("-----------------------------");
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public int getId() {
+        return id;
     }
 
 }
