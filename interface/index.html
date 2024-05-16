@@ -18,11 +18,34 @@
             <link rel="imagens/ufmg.png" 
             alt="logoUfmg">
             <div class="cabeçalho">
-               <h1>Logar</h1>
+               <h1>Sign in</h1>
                <div>Digite seus dados para acessar a plataforma</div>
             </div>
             <form action="coletar-dados" method="post">
-                <span class="form"></span>
+                <div class="nome">
+                    <input type="text" placeholder="Digite seu nome">
+                </div>
+                
+                <div class="cpf">
+                    <input type="text" placeholder="Digite seu CPF">
+                </div>
+                
+                <label for="nascimento">Digite sua data de nascimento:</label>
+                <div class="nascimento">
+                    <input type="date" name="nascimento" id="nascimento">
+                </div>
+
+                <div class="id">
+                    <input type="text" placeholder="Digite seu ID">
+                </div> 
+
+                <label for="escolha">Selecione:</label>
+                <select multiple id="escolha">
+
+                    <option value="opcao1">Professor</option>
+                    <option value="opcao2">Aluno</option>
+                    <option value="opcao3">Morador</option>
+                  </select>
             </form>
         </div>
     </div>
