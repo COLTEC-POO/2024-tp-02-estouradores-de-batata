@@ -44,8 +44,8 @@ public class Biblioteca {
             }
     }
 
-    void realizarDevolucao() {
-        usuario.devolverLivro()
+    void realizarDevolucao(Usuario usuario, Livro livro) {
+        usuario.devolverLivro(livro);
     }
 
     void realizarEmprestimo() {
