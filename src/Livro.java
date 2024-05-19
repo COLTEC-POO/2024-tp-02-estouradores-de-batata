@@ -5,16 +5,21 @@ public class Livro {
     int AnoDePublicacao;
     String editora;
     int quantidade;
+    boolean existo;
 
-    public Livro(String titulo, int quantidade, String editora, int birth, String autor) {
+    public Livro(String titulo, int quantidade, String editora, int birth, String autor, boolean existo) {
         this.titulo = titulo;
         this.quantidade = quantidade;
         this.editora = editora;
         this.AnoDePublicacao = birth;
         this.autor = autor;
+        this.existo = existo;
     }
 
-    public void imprimir(boolean amount){
+    public void imprimir(boolean amount) {
+        if(!existo) {
+            return;
+        }
         System.out.println("Livro:" + titulo + " de: " + autor);
         System.out.println("Em: " + AnoDePublicacao + " Pela Editora:" + editora);
 

@@ -12,9 +12,10 @@ public class Professor extends Usuario{
 
     boolean pegarLivro(Livro livro){
         boolean pego = false;
-        if(livrosAlugados.size() < 10)
+        if(livrosAlugados.size() < 10) {
+            //System.out.println("teste");
             pego = super.pegarLivro(livro);
-        else
+        } else
             System.out.println("Limite máximo de livros alugados alcançado");
         return pego;
     }
