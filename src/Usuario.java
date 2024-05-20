@@ -22,21 +22,25 @@ public class Usuario {
             livro.setQuantidade(1);
             livrosAlugados.remove(livro);
             devolvido = true;
+            System.out.println("Sucesso");
         }
         return devolvido;
     }
 
     boolean pegarLivro(Livro livro) {
         boolean pego = false;
-        if(livro.quantidade > 0) {
+        if (livro.quantidade > 0) {
             livro.setQuantidade(-1);
             livrosAlugados.add(livro);
             pego = true;
-        }
-        else if(livro.quantidade == 0) {
+            System.out.println("Sucesso");
+        } else if (livro.quantidade == 0) {
             System.out.println("Todas as copias ja foram alugadas...");
-        } else
+        } else {
             System.out.println("Não temos esse livro ou não existe...");
+    }
+
+        this.imprimirLivros(false);
         return pego;
     }
 
